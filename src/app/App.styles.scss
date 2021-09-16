@@ -1,0 +1,18 @@
+/* App.scss */
+// ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
+/*――――――― (|  SCSS-VARIABLES  |) ―――――――*/
+.linkBtn {
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:active {
+    transition: all 0.27s ease-in-out;
+    opacity: 0.17;
+  }
+
+  @apply bg-black text-2xl text-white p-2
+         rounded no-underline mx-2
+         hover:bg-blue-200 hover:text-black
+         transition duration-300 ease-in-out
+}

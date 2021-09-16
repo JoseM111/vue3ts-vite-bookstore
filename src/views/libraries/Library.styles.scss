@@ -1,0 +1,61 @@
+/* Library.styles.scss */
+// ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
+.BookcaseViewContainer {
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0;
+
+  .forBook {
+
+    &:hover {
+      background-color: #686181;
+      color: white;
+      transition: 0.15s all ease-in-out;
+    }
+
+    @apply rounded-md border
+           border-purple-600 text-center
+           w-48 mx-2 my-0 p-3 shadow-xl
+  }
+
+  .dropDown {
+    font-weight: bold;
+    border: none;
+    background-color: #e5e3e3;
+    color: dodgerblue;
+    opacity: 0.77;
+
+    &:hover {
+      cursor: pointer;
+      transition: 0.17s all ease-in-out;
+      color: black;
+      font-weight: bold;
+      background-color: #a9aeca;
+      opacity: 0.77;
+    }
+
+    @apply appearance-none pointer-events-auto
+           px-5 py-1.5 text-center rounded
+           shadow-md ml-3 outline-none
+  }
+
+  .flexContainer {
+    @apply flex flex-wrap
+  }
+
+  .addBookBtn {
+    cursor: pointer;
+
+    &:active {
+      transition: 0.17s all ease-in-out;
+      opacity: 0.15;
+    }
+
+    @apply bg-transparent hover:bg-black
+           text-black font-bold py-1 px-14
+           border border-transparent rounded
+           mb-0 mt-7 shadow-md hover:text-white
+  }
+}
+// ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
