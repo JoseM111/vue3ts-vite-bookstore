@@ -1,4 +1,4 @@
-/** bookcases.composable */
+/** shelf.composable */
 import { computed, ref } from "vue"
 import { store } from "../../store/store.vuex"
 import { WorkType } from "../../types/book.type"
@@ -30,6 +30,16 @@ export const libraryHook = () => {
 		.then()
 	}
 	
+	// function loadBooksCallbackHook() {
+	// 	return async (): Promise<void> => (
+	// 	await loadBooks()
+	// 	)
+	// }
+	
+	async function loadBooksCallbackHook(): Promise<void> {
+		return await loadBooks()
+	}
+	
 	// Will disable button if you already added the book to the shelf
 	function disableIfBookOnShelf(book: WorkType): WorkType | undefined {
 		// ™ ____________
@@ -43,7 +53,8 @@ export const libraryHook = () => {
 		shelfSize,
 		loadBooks,
 		addBook,
-		disableIfBookOnShelf
+		disableIfBookOnShelf,
+		loadBooksCallbackHook
 	}
 }
 // ⚫️⚫️☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰

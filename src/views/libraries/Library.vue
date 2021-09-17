@@ -17,12 +17,12 @@ const {
 	shelfSize,
 	loadBooks,
 	addBook,
-	disableIfBookOnShelf
+	disableIfBookOnShelf,
+	loadBooksCallbackHook
 } = libraryHook()
 
-onMounted(async (): Promise<void> => (
-	await loadBooks()
-))
+onMounted(loadBooksCallbackHook)
+/**/
 </script>
 <!-- ⚫️⚫️☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ -->
 
@@ -55,10 +55,12 @@ onMounted(async (): Promise<void> => (
 			<!---->
 			<div v-for="book in books"
 			     :key="book.key"
-			     class="forBook"
 			>
 				
-				<BookComponent :book="book"/>
+				<div class="forBook">
+					<!--⚫️ Book-Components ⚫️-->
+					<BookComponent :book="book"/>
+				</div>
 				
 				<button
 					@click="addBook(book)"

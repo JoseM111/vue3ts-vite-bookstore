@@ -31,6 +31,12 @@ export const store = createStore<StateType>({
 			if ( !state.shelf.find((b) => b.key === book.key) ) state.shelf.push(book)
 		},
 		//..........
+		mutRemoveFromShelf: (state: StateType, book: WorkType) => {
+			// ™ ____________
+			const index = state.shelf.findIndex((b) => b.key === book.key)
+			if ( index > -1 ) state.shelf.splice(index, 1)
+		},
+		//..........
 		mutSetCurrentCategory: (state: StateType, category: string) => state.currentCategory = category,
 		//..........
 		mutSetError: (state: StateType, error: string) => state.error = error,
@@ -46,6 +52,11 @@ export const store = createStore<StateType>({
 		commit("mutAddToShelf", book)
 		),
 		//..........
+		removeFromBookShelfAction: ({ commit }, book: WorkType): void => (
+		commit("mutRemoveFromShelf", book)
+		),
+		//..........
+		
 		loadBookListAction: async ({ state, commit }, category: string): Promise<void> => {
 			//..........
 			/** @state.category:
@@ -59,9 +70,7 @@ export const store = createStore<StateType>({
 				commit('mutSetIsBusy')
 				
 				try {
-					const results = await loadBooksByCategoryService(
-					category
-					)
+					const results = await loadBooksByCategoryService(category)
 					
 					results
 					? commit('mutSetBookList', results)

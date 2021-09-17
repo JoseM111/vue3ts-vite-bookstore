@@ -2,7 +2,10 @@
 // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
 .BookcaseComponentContainer {
 
-
   // ☰☰☰☰☰☰ (|  nested styles  |) ☰☰☰☰☰☰
-
+  .image {
+    position: relative;
+    right: 0.7rem;
+    border-radius: 8px;
+  }
 }

@@ -1,0 +1,42 @@
+/* Shelf.styles.scss */
+// ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
+.bookcaseContainer {
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 600;
+
+
+  // ☰☰☰☰☰☰ (|  nested styles  |) ☰☰☰☰☰☰
+  .flexContainer {
+    @apply flex flex-wrap
+  }
+
+  .forBook {
+    height: 85%;
+
+    &:hover {
+      background-color: #686181;
+      color: white;
+      transition: 0.15s all ease-in-out;
+    }
+
+    @apply rounded-md border
+    border-purple-600 text-center
+    w-48 mx-2 my-0 p-3 shadow-xl
+  }
+
+  .removeBookBtn {
+    cursor: pointer;
+    margin-left: 1.2rem;
+    margin-bottom: 3rem;
+
+    &:active {
+      transition: 0.17s all ease-in-out;
+      opacity: 0.15;
+    }
+
+    @apply bg-transparent hover:bg-red-600
+    text-black font-bold py-1 px-10
+    border border-transparent rounded
+    mt-2 shadow-md hover:text-white
+  }
+}

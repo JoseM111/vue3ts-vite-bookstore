@@ -6,31 +6,50 @@
 <script setup lang="ts">
 // ⚫️⚫️☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
 import { ref } from "vue"
+import BookComponent from "../../components/book/Book.component.vue"
 import { store } from "../../store/store.vuex"
 import { WorkType } from "../../types/book.type"
-import BookComponent from "../../components/book/Book.component.vue"
 // 🌀🌀💻 ☰☰☰☰☰☰☰☰☰☰☰ setup ☰☰☰☰☰☰☰☰☰☰☰ 💻🌀🌀
 const shelf = ref<WorkType[]>(store.state.shelf)
 
-
-
+function removeBook(book: WorkType) {
+	store.dispatch(
+		'removeFromBookShelfAction',
+		book
+	)
+}
+/**/
 </script>
 <!-- ⚫️⚫️☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ -->
 
 // 🌀🌀💻 HTML 💻🌀🌀
 <template>
   <!-- 🎵🎵🔲🔲◾☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ -->
-	<div class="bookcaseContainer">
-		<!---->
-		<h1>My Bookshelf</h1>
 	
-		<div v-for="book in shelf"
-		     :key="book.key"
-		     class=""
-		>
-			<BookComponent :book="book"/>
-		</div>
+	<div class="bookcaseContainer ">
 		<!---->
+		<!--⚫️ Page-Title ⚫️-->
+		<h1>My Bookshelf</h1>
+
+		<div class="flexContainer">
+			<div v-for="book in shelf"
+			     :key="book.key"
+			>
+				
+				<!--⚫️ Book-Components ⚫️-->
+				<div class="forBook">
+					<BookComponent :book="book"/>
+				</div>
+				
+				<button
+					@click="removeBook(book)"
+					class="removeBookBtn"
+				>
+					Remove from Shelf
+				</button>
+			</div>
+		</div>
+			<!---->
 	</div>
   <!-- 🎵🎵🔲🔲◾☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ -->
 </template>
@@ -38,6 +57,6 @@ const shelf = ref<WorkType[]>(store.state.shelf)
 
 // 🌀🌀💻 STYLES 💻🌀🌀
 <style lang="scss">
-@import 'Bookcase.styles.scss';
+@import 'Shelf.styles';
 </style>
 <!-- ⚫️⚫️☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ -->

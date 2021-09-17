@@ -6,10 +6,12 @@
   cursor: pointer;
   margin-bottom: 0;
 
+  // ☰☰☰☰☰☰ (|  nested styles  |) ☰☰☰☰☰☰
   .forBook {
+    height: 85%;
 
     &:hover {
-      background-color: #686181;
+      background-color: #d2cfda;
       color: white;
       transition: 0.15s all ease-in-out;
     }
@@ -17,6 +19,22 @@
     @apply rounded-md border
            border-purple-600 text-center
            w-48 mx-2 my-0 p-3 shadow-xl
+  }
+
+  .addBookBtn {
+    cursor: pointer;
+    margin-left: 1.5rem;
+    margin-bottom: 5rem;
+
+    &:active {
+      transition: 0.17s all ease-in-out;
+      opacity: 0.15;
+    }
+
+    @apply bg-transparent hover:bg-black
+    text-black font-bold py-1 px-14
+    border border-transparent rounded
+    mt-2 shadow-md hover:text-white
   }
 
   .dropDown {
@@ -42,20 +60,6 @@
 
   .flexContainer {
     @apply flex flex-wrap
-  }
-
-  .addBookBtn {
-    cursor: pointer;
-
-    &:active {
-      transition: 0.17s all ease-in-out;
-      opacity: 0.15;
-    }
-
-    @apply bg-transparent hover:bg-black
-           text-black font-bold py-1 px-14
-           border border-transparent rounded
-           mb-0 mt-7 shadow-md hover:text-white
   }
 }
 // ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰
